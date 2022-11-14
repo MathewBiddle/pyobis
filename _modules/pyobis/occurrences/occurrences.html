@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pyobis.occurrences.occurrences &mdash; pyobis 0.1.1.dev316+g2198d7b documentation</title>
+  <title>pyobis.occurrences.occurrences &mdash; pyobis 0.1.1.dev346+g8c33cae documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,7 +29,7 @@
             <a href="../../../index.html" class="icon icon-home"> pyobis
           </a>
               <div class="version">
-                0.1.1.dev316+g2198d7b
+                0.1.1.dev346+g8c33cae
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
@@ -61,9 +61,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Module code</a> &raquo;</li>
-      <li>pyobis.occurrences.occurrences</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pyobis.occurrences.occurrences</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -86,6 +86,7 @@
 
 <span class="kn">from</span> <span class="nn">..obisutils</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">OBISQueryResult</span><span class="p">,</span>
+    <span class="n">handle_arrint</span><span class="p">,</span>
     <span class="n">handle_arrstr</span><span class="p">,</span>
     <span class="n">obis_baseurl</span><span class="p">,</span>
     <span class="n">obis_GET</span><span class="p">,</span>
@@ -193,6 +194,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">obis_baseurl</span> <span class="o">+</span> <span class="s2">&quot;occurrence&quot;</span>
         <span class="n">scientificname</span> <span class="o">=</span> <span class="n">handle_arrstr</span><span class="p">(</span><span class="n">scientificname</span><span class="p">)</span>
+        <span class="n">taxonid</span> <span class="o">=</span> <span class="n">handle_arrint</span><span class="p">(</span><span class="n">taxonid</span><span class="p">)</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;taxonid&quot;</span><span class="p">:</span> <span class="n">taxonid</span><span class="p">,</span>
             <span class="s2">&quot;nodeid&quot;</span><span class="p">:</span> <span class="n">nodeid</span><span class="p">,</span>
@@ -286,7 +288,7 @@
 
 <span class="sd">            from pyobis.occurrences import OccQuery</span>
 <span class="sd">            occ = OccQuery()</span>
-<span class="sd">            occ.get(id = &#39;00008e33-6faa-4d98-a00b-91a6ed1ed3ca&#39;)</span>
+<span class="sd">            occ.get(id = &#39;00003cf7-f2fc-4c53-98a6-7d846e70f5d1&#39;)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">obis_baseurl</span> <span class="o">+</span> <span class="s2">&quot;occurrence/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">{}</span>
@@ -355,6 +357,8 @@
 <span class="sd">            occ.grid(1000, False)   // returns in KML format</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">obis_baseurl</span> <span class="o">+</span> <span class="s2">&quot;occurrence/grid/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">precision</span><span class="p">)</span>
+        <span class="n">scientificname</span> <span class="o">=</span> <span class="n">handle_arrstr</span><span class="p">(</span><span class="n">scientificname</span><span class="p">)</span>
+        <span class="n">taxonid</span> <span class="o">=</span> <span class="n">handle_arrint</span><span class="p">(</span><span class="n">taxonid</span><span class="p">)</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;scientificname&quot;</span><span class="p">:</span> <span class="n">scientificname</span><span class="p">,</span>
             <span class="s2">&quot;taxonid&quot;</span><span class="p">:</span> <span class="n">taxonid</span><span class="p">,</span>
@@ -446,6 +450,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">obis_baseurl</span> <span class="o">+</span> <span class="s2">&quot;occurrence/points&quot;</span>
         <span class="n">scientificname</span> <span class="o">=</span> <span class="n">handle_arrstr</span><span class="p">(</span><span class="n">scientificname</span><span class="p">)</span>
+        <span class="n">taxonid</span> <span class="o">=</span> <span class="n">handle_arrint</span><span class="p">(</span><span class="n">taxonid</span><span class="p">)</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;scientificname&quot;</span><span class="p">:</span> <span class="n">scientificname</span><span class="p">,</span>
             <span class="s2">&quot;taxonid&quot;</span><span class="p">:</span> <span class="n">taxonid</span><span class="p">,</span>
@@ -535,6 +540,7 @@
         <span class="n">z</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">obis_baseurl</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;occurrence/point/</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="n">scientificname</span> <span class="o">=</span> <span class="n">handle_arrstr</span><span class="p">(</span><span class="n">scientificname</span><span class="p">)</span>
+        <span class="n">taxonid</span> <span class="o">=</span> <span class="n">handle_arrint</span><span class="p">(</span><span class="n">taxonid</span><span class="p">)</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;scientificname&quot;</span><span class="p">:</span> <span class="n">scientificname</span><span class="p">,</span>
             <span class="s2">&quot;taxonid&quot;</span><span class="p">:</span> <span class="n">taxonid</span><span class="p">,</span>
@@ -626,6 +632,7 @@
             <span class="n">obis_baseurl</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;occurrence/tile/</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="p">)</span>
         <span class="n">scientificname</span> <span class="o">=</span> <span class="n">handle_arrstr</span><span class="p">(</span><span class="n">scientificname</span><span class="p">)</span>
+        <span class="n">taxonid</span> <span class="o">=</span> <span class="n">handle_arrint</span><span class="p">(</span><span class="n">taxonid</span><span class="p">)</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;scientificname&quot;</span><span class="p">:</span> <span class="n">scientificname</span><span class="p">,</span>
             <span class="s2">&quot;taxonid&quot;</span><span class="p">:</span> <span class="n">taxonid</span><span class="p">,</span>
@@ -714,6 +721,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">obis_baseurl</span> <span class="o">+</span> <span class="s2">&quot;occurrence/centroid&quot;</span>
         <span class="n">scientificname</span> <span class="o">=</span> <span class="n">handle_arrstr</span><span class="p">(</span><span class="n">scientificname</span><span class="p">)</span>
+        <span class="n">taxonid</span> <span class="o">=</span> <span class="n">handle_arrint</span><span class="p">(</span><span class="n">taxonid</span><span class="p">)</span>
         <span class="n">OBISQueryResult</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;scientificname&quot;</span><span class="p">:</span> <span class="n">scientificname</span><span class="p">,</span>
             <span class="s2">&quot;taxonid&quot;</span><span class="p">:</span> <span class="n">taxonid</span><span class="p">,</span>
